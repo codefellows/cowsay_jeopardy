@@ -103,7 +103,8 @@ try?
 EOF
 
 loop do
+  puts "\n\n\npress any key to continue, ctrl-c to exit"
   gets
   system "clear"
-  system "cowsay #{terms.split.sample}"
+  system "cowsay #{terms.split("\n").sample}"
 end
