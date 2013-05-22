@@ -1,3 +1,56 @@
+require "rubygems"
+require "bundler/setup"
+require "lolcat"
+
+cows = <<-EOF
+beavis.zen
+bong
+bud-frogs
+bunny
+cheese
+cower
+daemon
+default
+dragon-and
+dragon
+elephant-in-snake
+elephant
+eyes
+flaming-sheep
+ghostbusters
+head-in
+hellokitty
+kiss
+kitty
+koala
+kosh
+luke-koala
+mech-and
+meow
+milk
+moofasa
+moose
+mutilated
+ren
+satanic
+sheep
+skeleton
+small
+sodomized
+stegosaurus
+stimpy
+supermilker
+surgery
+three-eyes
+turkey
+turtle
+tux
+udder
+vader-koala
+vader
+www
+EOF
+
 terms = <<-EOF
 ActiveRecord::Base#update_attributes before_filter
 before_filter, :only option
@@ -106,5 +159,8 @@ loop do
   puts "\n\n\npress any key to continue, ctrl-c to exit"
   gets
   system "clear"
-  system "cowsay #{terms.split("\n").sample}"
+  cow = cows.split("\n").sample
+  cowsay_cmd = "cowsay -f #{cow} #{terms.split("\n").sample} | lolcat"
+  puts cowsay_cmd
+  system cowsay_cmd
 end
