@@ -1,7 +1,8 @@
 cowsay_jeopardy
 ===============
 
-`brew install cowsay` before running
+`brew install cowsay` or `sudo apt-get install cowsay` before running. 
+then: `ruby jeopardy.rb`
 
 ```
  _________________________________ 
